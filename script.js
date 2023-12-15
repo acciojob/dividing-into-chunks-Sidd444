@@ -4,7 +4,7 @@ const divide = (arr, n) => {
   // Write your code here
   const ans=[];
   let sub=[];
-  for(let a in arr){
+  for(const a of arr){
 	  if(sub.reduce((sum,ele)=>sum+el,0)+a<=n) sub.push(a);
 	  else{
 		  ans.push([...sub]);
@@ -13,6 +13,6 @@ const divide = (arr, n) => {
   }
   ans.push([...sub]);
   return ans+sub;
-}
-//const n = prompt("Enter n: ");
-alert(JSON.stringify(divide(arr, n)));
+} 
+const n = prompt("Enter n: ");
+alert(JSON.stringify(divide(arr,parseInt(n))));
