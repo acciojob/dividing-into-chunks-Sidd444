@@ -5,15 +5,16 @@ const divide = (arr, n) => {
   let ans=[],curr=[],sum=0;
   for(let a of arr){
 	  if(sum+a<=n){
-		  curr.push(a);
 		  sum+=a;
+		  curr.push(a);
 	  }else{
 		  ans.push(curr);
 		  curr=[a];
 		  sum=a;
 	  }
   }
+  if(curr.length!==0) ans.push(curr);
   return ans;
 } 
-const n = prompt("Enter n: ");
+const n = prompt("Enter n: "); 
 alert(JSON.stringify(divide(arr,parseInt(n))));
